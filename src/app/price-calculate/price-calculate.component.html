@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Calcular Precio Final</h1>
+
+    <form [formGroup]="calculatePriceForm" (ngSubmit)="onSubmit()">
+        <label>Código Marca:</label>
+        <input type="text" id="codBrand" formControlName="codBrand">
+      
+        <label>Código Producto:</label>
+        <input type="text" id="codProduct" formControlName="codProduct">
+      
+        <label>Fecha:</label>
+        <input type="text" id="date" formControlName="date">
+      
+        <button type="submit" [disabled]="calculatePriceForm.invalid">Obtener precio</button>
+    </form>
+    <h2>Precio calculado:</h2>
+    <div id="precioResult">{{priceResult}}</div>
+</div>

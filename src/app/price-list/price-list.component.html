@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Listado de Precios</h1>
+
+    <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="codBrand">
+            <mat-header-cell *matHeaderCellDef> Código Marca </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.codBrand}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="startDate">
+            <mat-header-cell *matHeaderCellDef> Fecha Inicio  </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.startDate}} </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="endDate">
+            <mat-header-cell *matHeaderCellDef> Fecha Fin  </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.endDate}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="codFee">
+            <mat-header-cell *matHeaderCellDef> Código Tarifa  </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.codFee}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="codProduct">
+            <mat-header-cell *matHeaderCellDef> Código Producto  </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.codProduct}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <mat-header-cell *matHeaderCellDef> Precio Final  </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+</div>
